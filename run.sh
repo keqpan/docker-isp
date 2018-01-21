@@ -1,9 +1,10 @@
 #!/bin/bash
 
-cd code && python code.py;
-cd ../latex && pdflatex paper.tex;
-biber paper && pdflatex paper.tex && pdflatex paper.tex;
+cd code && python3 code.py;
+cd ../latex && pdflatex -interaction=batchmode paper.tex;
+biber paper && pdflatex -interaction=batchmode paper.tex && pdflatex -interaction=batchmode paper.tex;
 cp paper.pdf ../results/;
+cp textrank_example.png ../results/;
 
 #docker tag handson blaabl/isp
 
